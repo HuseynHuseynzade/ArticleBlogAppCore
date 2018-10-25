@@ -1,0 +1,54 @@
+﻿@using ArticleBlogAppCore.Areas.Admin.Models
+@model RegisterModel
+
+<div class="content-page">
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-10">
+                    <div class="card-box">
+                        <h4 class="header-title m-t-0">Validation type</h4>
+
+                        <div class="text-muted font-14 m-b-20" asp-validation-summary="ModelOnly"></div>
+
+
+                        <form enctype="multipart/form-data" class="" asp-action="CreateUser" asp-controller="Users" method="post">
+
+                            <div class="form-group">
+                                <label asp-for="UserName"></label>
+                                <input asp-for="UserName" class="form-control" required />
+                                <span asp-validation-for="UserName"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Email"></label>
+                                <input asp-for="Email" class="form-control" required />
+                                <span asp-validation-for="Email"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Password"></label>
+                                <input asp-for="Password" class="form-control" required />
+                                <span asp-validation-for="Password"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ConfirmPassword"></label>
+                                <input required class="form-control" asp-for="ConfirmPassword">
+                                <span asp-validation-for="ConfirmPassword"></span>
+                            </div>
+                           
+                            <!-- end row -->
+
+                            <div class="form-group">
+                                <button class="btn btn-block btn-success waves-effect waves-light" type="submit">Create</button>
+                            </div>
+
+                        </form>
+                    </div> <!-- end card-box -->
+                </div> <!-- end col -->
+
+
+
+            </div>
+            <!-- end row -->
+        </div>
+    </div>
+</div>

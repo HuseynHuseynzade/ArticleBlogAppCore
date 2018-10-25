@@ -8,6 +8,7 @@ namespace ArticleBlogAppCore.Models.ViewModels
 {
     public class RegisterModel:LoginModel
     {
+        
         [Required]
         [DataType(DataType.Text)]
         [Display(Name ="Please enter user name")]
@@ -23,6 +24,7 @@ namespace ArticleBlogAppCore.Models.ViewModels
         {
             return new AppUser()
             {
+                 
                  Email = registerModel.Email,
                  UserName = registerModel.UserName
             };
