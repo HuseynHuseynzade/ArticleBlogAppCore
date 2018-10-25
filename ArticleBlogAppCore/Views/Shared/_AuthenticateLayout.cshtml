@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+@{
+    Layout = null;
+}
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- Icons css -->
+    <link href="~/lib/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/lib/css/webfont.css" rel="stylesheet" type="text/css" />
+    <link href="~/lib/css/simple-line-icons.css" rel="stylesheet" type="text/css" />
+
+    <!-- App css -->
+    <!-- build:css -->
+    <link href="~/css/app.css" rel="stylesheet" type="text/css" />
+    <!-- endbuild -->
+
+</head>
+
+<body class="bg-account-pages">
+
+    <!-- Register -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+                    <div class="wrapper-page">
+                        <div class="account-pages">
+                            <div class="account-box">
+
+                                <!-- Logo box-->
+                                <div class="account-logo-box">
+                                    <h2 class="text-uppercase text-center">
+                                        <a href="index.html" class="text-success">
+                                            <span><img src="~/images/logo.png" alt="" height="22"></span>
+                                        </a>
+                                    </h2>
+                                </div>
+                                @RenderBody();
+                            </div> <!-- end account-box -->
+                        </div>
+                        <!-- end account-page-->
+                    </div>
+                    <!-- end wrapper-page -->
+
+                </div> <!-- end col -->
+            </div> <!-- end row -->
+        </div> <!-- end container -->
+    </section>
+    <!-- END HOME -->
+    <!-- jQuery  -->
+    <script src="~/js/jquery.min.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+
+    <script src="~/lib/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/js/jquery.slimscroll.min.js"></script>
+    <script src="~/lib/js/metisMenu.min.js"></script>
+
+    <!-- App js -->
+    <script src="~/js/jquery.core.js"></script>
+    <script src="~/js/jquery.app.js"></script>
+
+</body>
+</html>

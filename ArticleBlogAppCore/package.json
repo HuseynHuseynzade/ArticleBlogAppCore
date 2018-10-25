@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "name": "asp.net",
+  "private": true,
+  "devDependencies": {
+    "animate-js": "0.3.2",
+    "animate-css-webpack": "3.5.6",
+    "font-awesome": "4.7.0",
+    "bootstrap": "3.3.6",
+    "slick": "1.12.1",
+    "gulp": "4.0.0",
+    "gulp-sass": "4.0.1"
+  }
+}

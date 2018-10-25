@@ -1,0 +1,87 @@
+﻿      <!-- Page Content Start -->
+@model ArticleModel
+<link href="~/lib/summernote/summernote-bs4.css" rel="stylesheet" />
+<link href="~/lib/dropzone/dropzone.css" rel="stylesheet" />
+<div class="content-page">
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-10">
+                    <div class="card-box">
+                        <h4 class="header-title m-t-0">Validation type</h4>
+                       
+                            <div class="text-muted font-14 m-b-20" asp-validation-summary="ModelOnly"></div>
+                     
+
+                        <form enctype="multipart/form-data" class="" asp-action="Create" asp-controller="Articles" method="post">
+                          
+                            <div class="form-group">
+                                <label asp-for="Name"></label>
+                                <input asp-for="Name" class="form-control" required />
+                                <span asp-validation-for="Name"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="MetaDescription"></label>
+                                <input asp-for="MetaDescription" class="form-control" required />
+                                <span asp-validation-for="MetaDescription"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="MetaKeywords"></label>
+                                <input asp-for="MetaKeywords" class="form-control" required />
+                                <span asp-validation-for="MetaKeywords"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Description"></label>
+                                <textarea required class="form-control" asp-for="Description"></textarea>
+                                <span asp-validation-for="Description"></span>
+                            </div>
+                                    <div class="card-box form-group">
+                                            <div class="fallback">
+                                                <input accept="image/*" type="file" asp-for="FormFile" />
+                                            </div>   
+                                    </div>
+                            <!-- end row -->
+
+                            <div class="card-box">
+                                <textarea asp-for="Detail" id="summernote-editor">
+                                    
+                                </textarea> <!-- end summernote-editor-->
+                            </div> <!-- end card-box-->
+                            <div class="form-group">
+                                <div>
+                                    <button type="submit" class="btn btn-primary waves-effect waves-light">
+                                        Submit
+                                    </button>
+                                    <button type="reset" class="btn btn-light waves-effect m-l-5">
+                                        Cancel
+                                    </button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div> <!-- end card-box -->
+                </div> <!-- end col -->
+
+
+
+            </div>
+            <!-- end row -->
+        </div>
+    </div>
+</div>
+
+<partial name="_Scripts" />
+<!--Summernote js-->
+
+
+<script>
+    jQuery(document).ready(function () {
+        $('#summernote-editor').summernote({
+            height: 250,                 // set editor height
+            minHeight: null,             // set minimum height of editor
+            maxHeight: null,             // set maximum height of editor
+            focus: false                 // set focus to editable area after initializing summernote
+        });
+
+    });
+</script>

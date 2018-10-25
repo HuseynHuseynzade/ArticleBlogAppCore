@@ -1,0 +1,51 @@
+﻿@model RegisterModel
+@{
+    Layout = "_AuthenticateLayout";
+}
+
+<div class="account-content">
+    <form class="form-horizontal" asp-action="Register" asp-controller="Account">
+        <div asp-validation-summary="ModelOnly"> </div>
+        <div class="form-group mb-3">
+            <label asp-for="UserName" class="font-weight-medium"></label>
+            <input class="form-control" asp-for="UserName">
+            <span asp-validation-for="UserName"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Email" class="font-weight-medium"></label>
+            <input class="form-control" asp-for="Email" >
+            <span asp-validation-for="Email"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Password" class="font-weight-medium"></label>
+            <input class="form-control" asp-for="Password" required>
+            <span asp-validation-for="Password"></span>
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="ConfirmPassword" class="font-weight-medium"></label>
+            <input class="form-control" asp-for="ConfirmPassword" required>
+            <span asp-validation-for="ConfirmPassword"></span>
+        </div>
+        <div class="form-group mb-3">
+            <div class="checkbox checkbox-info">
+                <input asp-for="IsRemembered" type="checkbox">
+                <label asp-for="IsRemembered">
+                    I accept <a href="#" class="text-muted">Terms and Conditions</a>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-block btn-success waves-effect waves-light" type="submit">Sign Up</button>
+        </div>
+    </form> <!-- end form -->
+
+    <div class="row mt-3">
+        <div class="col-12 text-center">
+            <p class="text-muted">Already have an account? <a asp-action="Login" asp-controller="Account" class="text-dark ml-1"><b>Sign In</b></a></p>
+        </div>
+    </div>
+
+</div> <!-- end account-content -->

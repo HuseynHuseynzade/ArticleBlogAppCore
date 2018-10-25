@@ -1,0 +1,41 @@
+﻿@{ 
+    Layout = "_AuthenticateLayout";
+}
+@model LoginModel
+                                <div class="account-content">
+                                    <form class="form-horizontal" asp-action="Login" asp-controller="Account">
+                                    <div asp-validation-summary="ModelOnly"> </div>
+                                        <div class="form-group mb-3">
+                                            <label asp-for="Email" class="font-weight-medium"></label>
+                                            <input class="form-control" asp-for="Email" required>
+                                            <span asp-validation-for="Email"></span>
+                                        </div>
+
+                                        <div class="form-group mb-3">
+                                            <label asp-for="Password" class="font-weight-medium"></label>
+                                            <input class="form-control" asp-for="Password" required>
+                                            <span asp-validation-for="Password"></span>
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <div class="checkbox checkbox-info">
+                                                <input asp-for="IsRemembered" type="checkbox">
+                                                <label asp-for="IsRemembered">
+                                                    I accept <a href="#" class="text-muted">Terms and Conditions</a>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <button class="btn btn-block btn-success waves-effect waves-light" type="submit">Sign In</button>
+                                        </div>
+                                    </form> <!-- end form -->
+
+                                    <div class="row mt-3">
+                                        <div class="col-12 text-center">
+                                            <p class="text-muted">No account? <a  asp-action="Register" asp-controller="Account" class="text-dark ml-1"><b>Register</b></a></p>
+                                        </div>
+                                    </div>
+
+                                </div> <!-- end account-content -->
+
+                        

@@ -1,0 +1,49 @@
+﻿@using ArticleBlogAppCore.Models
+@model Category
+<link href="~/lib/summernote/summernote-bs4.css" rel="stylesheet" />
+<link href="~/lib/dropzone/dropzone.css" rel="stylesheet" />
+<div class="content-page">
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-10">
+                    <div class="card-box">
+                        <h4 class="header-title m-t-0">Validation type</h4>
+
+                        <div class="text-muted font-14 m-b-20" asp-validation-summary="ModelOnly"></div>
+
+
+                        <form enctype="multipart/form-data" class="" asp-action="Create" asp-controller="Categories" method="post">
+
+                            <div class="form-group">
+                                <label asp-for="Name"></label>
+                                <input asp-for="Name" class="form-control" required />
+                                <span asp-validation-for="Name"></span>
+                            </div>
+                           
+                            <div class="form-group">
+                                <div>
+                                    <button type="submit" class="btn btn-primary waves-effect waves-light">
+                                        Submit
+                                    </button>
+                                    <button type="reset" class="btn btn-light waves-effect m-l-5">
+                                        Cancel
+                                    </button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div> <!-- end card-box -->
+                </div> <!-- end col -->
+
+
+
+            </div>
+            <!-- end row -->
+        </div>
+    </div>
+</div>
+
+<partial name="_Scripts" />
+
+

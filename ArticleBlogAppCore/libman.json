@@ -1,0 +1,50 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "provider": "filesystem",
+      "library": "C:\\Users\\SuleymaniTural\\Desktop\\Greeva_v1.0\\Admin\\Vertical-Boxed\\dist\\assets\\js",
+      "files": [ "jquery.app.js", "jquery.core.js" ],
+      "destination": "wwwroot/js/"
+    },
+    {
+      "provider": "filesystem",
+      "library": "C:\\Users\\SuleymaniTural\\Desktop\\Greeva_v1.0\\Admin\\Vertical-Boxed\\dist\\assets\\libs\\@mdi\\font\\css",
+      "files": [ "materialdesignicons.min.css" ],
+      "destination": "wwwroot/lib/css"
+    },
+    {
+      "provider": "filesystem",
+      "library": "C:\\Users\\SuleymaniTural\\Desktop\\Greeva_v1.0\\Admin\\Vertical-Boxed\\dist\\assets\\libs\\simple-line-icons\\css",
+      "files": [ "simple-line-icons.css" ],
+      "destination": "wwwroot/lib/css"
+    },
+   
+    {
+      "library": "metisMenu@2.7.9",
+      "files": [ "metisMenu.min.js" ],
+      "destination": "wwwroot/lib/js/"
+    },
+    {
+      "library": "jQuery-slimScroll@1.3.8",
+      "files": [ "jquery.slimscroll.min.js" ],
+      "destination": "wwwroot/lib/js/"
+    },
+    {
+      "library": "twitter-bootstrap@4.1.3",
+      "files": [ "js/bootstrap.bundle.min.js" ],
+      "destination": "wwwroot/lib"
+    },
+    {
+      "library": "animate.css@3.7.0",
+      "files": [ "animate.css" ],
+      "destination": "wwwroot/lib/"
+    },
+    {
+      "library": "jquery@1.12.3",
+      "files": [ "jquery.min.js" ],
+      "destination": "wwwroot/js"
+    }
+  ]
+}
