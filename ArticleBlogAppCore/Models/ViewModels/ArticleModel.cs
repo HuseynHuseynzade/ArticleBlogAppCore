@@ -27,6 +27,7 @@ namespace ArticleBlogAppCore.Models.ViewModels
         [Required]
         public IFormFile FormFile { get; set; }
 
+
         public static implicit operator Article(ArticleModel articleModel)
         {
             return new Article()

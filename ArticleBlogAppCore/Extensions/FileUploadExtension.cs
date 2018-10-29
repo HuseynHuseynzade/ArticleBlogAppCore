@@ -10,6 +10,10 @@ namespace ArticleBlogAppCore.Extensions
 {
     public static class FileUploadExtension
     {
+        public static string GetFileName(this IFormFile formFile)
+        {
+           return formFile.GetOnlyFileName() + "_" + DateTime.Now.ToString("yyyyMMddHHmmss") + "." + formFile.GetFileExtension();
+        }
         public static string GetFileExtension(this IFormFile formFile)
         {
             string p = formFile.FileName;
@@ -28,13 +32,10 @@ namespace ArticleBlogAppCore.Extensions
             return path.Substring(0, path.IndexOf("."));
         }
 
-        public static async Task UploadAsync(this IFormFile formFile,IHostingEnvironment _hostingEnvironment)
+        public static async Task UploadAsync(this IFormFile formFile,IHostingEnvironment _hostingEnvironment,string fileName)
         {
             string photoPath = formFile.FileName;
-
-            string fileName = formFile.GetOnlyFileName()+"_"+DateTime.Now.ToString("yyyyMMddHHmmss")+"."+ formFile.GetFileExtension();
-
-
+            
             string fullFilePath = Path.Combine(_hostingEnvironment.ContentRootPath, "Uploads", fileName);
 
             using (FileStream fs = new FileStream(fullFilePath, FileMode.Create))

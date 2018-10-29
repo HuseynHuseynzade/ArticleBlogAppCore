@@ -8,28 +8,40 @@
                 <div class="col-lg-10">
                     <div class="card-box">
                         <h4 class="header-title m-t-0">Validation type</h4>
-
                         <div class="text-muted font-14 m-b-20" asp-validation-summary="ModelOnly"></div>
 
-
-                        <form enctype="multipart/form-data" class="" asp-action="CreateUser" asp-controller="Users" method="post">
+                        <form enctype="multipart/form-data" class="" asp-action="Edit" asp-controller="Users" method="post">
+                            @Html.HiddenFor(x => x.Id)
+                            @Html.HiddenFor(x => x.Email)
                             <div class="form-group">
                                 <label asp-for="Name"></label>
-                                <input asp-for="Name" class="form-control" required />
+                                <input asp-for="Name" value="@Model.Name" class="form-control" required />
                                 <span asp-validation-for="Name"></span>
                             </div>
                             <div class="form-group">
                                 <label asp-for="Email"></label>
-                                <input asp-for="Email" class="form-control" required />
+                                <input id="email_user" name="email_user" disabled value="@Model.Email" class="form-control" required />
                                 <span asp-validation-for="Email"></span>
                             </div>
                             <div class="form-group">
                                 <select class="form-control" asp-for="RoleId">
-                                    @foreach(var f in Model.Roles)
+                                    @foreach (var f in Model.Roles)
                                     {
-                                        <option value="@f.Id">@f.RoleName </option>
+                                        if (f.RoleName == Model.RoleName)
+                                        {
+                                            <option selected value="@f.Id">@f.RoleName </option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@f.Id">@f.RoleName </option>
+                                        }
                                     }
                                 </select>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="NewPassword"></label>
+                                <input asp-for="NewPassword" class="form-control" placeholder="If you want to change.." />
+                                <span asp-validation-for="NewPassword"></span>
                             </div>
                             <div class="form-group">
                                 <label asp-for="Password"></label>
@@ -44,13 +56,11 @@
 
                             <!-- end row -->
                             <div class="form-group">
-                                <button class="btn btn-block btn-success waves-effect waves-light" type="submit">Create</button>
+                                <button class="btn btn-block btn-success waves-effect waves-light" type="submit">Save</button>
                             </div>
                         </form>
                     </div> <!-- end card-box -->
                 </div> <!-- end col -->
-
-
 
             </div>
             <!-- end row -->

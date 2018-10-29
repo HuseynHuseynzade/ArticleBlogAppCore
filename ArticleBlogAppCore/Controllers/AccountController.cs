@@ -103,13 +103,7 @@ namespace ArticleBlogAppCore.Controllers
                 return View();
         }
 
-        private void AddErrorToModelState(IEnumerable<IdentityError> errors)
-        {
-            foreach (IdentityError item in errors)
-            {
-                ModelState.AddModelError("", item.Description);
-            }
-        }
+       
 
         
     }

@@ -101,10 +101,11 @@ namespace ArticleBlogAppCore.Areas.Admin.Controllers
 
             string p = articleModel?.FormFile?.FileName;
 
-
+            string fileName = String.Empty;
             if (p != null)
             {
-                articleModel.PhotoPath = p.Substring(p.LastIndexOf(@"\") + 1);
+                fileName = articleModel.FormFile.GetFileName();
+                articleModel.PhotoPath = fileName;
             }
             else
             {
@@ -117,7 +118,7 @@ namespace ArticleBlogAppCore.Areas.Admin.Controllers
             {
                 Article article = articleModel;
                 article.AuthorId = _session.HttpContext.Session.TryGetSessionValue("userId");
-                 if(article.AuthorId==null)
+                 if(article.AuthorId==null) 
                 {
                     ModelState.AddModelError("", "User not defined!!");
                     return View();
@@ -128,7 +129,7 @@ namespace ArticleBlogAppCore.Areas.Admin.Controllers
                    await _articleBlogDbContext.SaveChangesAsync();
 
                                
-                   await articleModel.FormFile.UploadAsync(_hostingEnvironment);
+                   await articleModel.FormFile.UploadAsync(_hostingEnvironment,fileName);
 
                     return RedirectToAction("Articles", "Home", new { area = "Admin" });
                 }
