@@ -1,0 +1,20 @@
+﻿@model IEnumerable<ArticleIndexModel>
+<div class="row">
+    <div class="center-slider mask">
+        @foreach (ArticleIndexModel article in Model)
+        {
+            <!-- slide of the page -->
+            <article class="slide">
+                <div class="slide-holder">
+                    <div class="img-holder">
+                        <img src="@System.IO.Path.Combine("/Uploads",article.PhotoPath)" alt="image description">
+                    </div>
+                    <h2><a asp-action="Detail"asp-controller="Article" asp-route-id="@article.Id">@article</a></h2>
+                    <time datetime="2011-01-12"><a href="#">@article.CreateDate</a></time>
+                    <a asp-action="Detail"asp-controller="Article" asp-route-id="@article.Id" class="read-more">Continue Reading</a>
+                </div>
+            </article>
+            <!-- slide of the page end -->
+        }
+    </div>
+</div>
